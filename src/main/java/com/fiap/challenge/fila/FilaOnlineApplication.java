@@ -1,31 +1,33 @@
 package com.fiap.challenge.fila;
 
-import modelo.*;
+import com.fiap.challenge.fila.domain.Atividade;
+import com.fiap.challenge.fila.domain.Evento;
+import com.fiap.challenge.fila.domain.Fila;
+import com.fiap.challenge.fila.domain.Usuario;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.List;
 
 @SpringBootApplication
 public class FilaOnlineApplication {
 
 	public static void main(String[] args) {
 
+		SpringApplication.run(FilaOnlineApplication.class, args);
+
 		LocalDateTime dataLogin = LocalDateTime.now();
 
 				Evento evento = new Evento();
 		LocalDateTime dataEvento = LocalDateTime.of(2025, 5, 20, 9, 0);
-		evento.setEventoDoId(1);
+		evento.setEventoId(1);
 		evento.setNome("ComicCon");
 		evento.setData(dataEvento);
 		evento.setEndereco("Avenidada Paulista, n°3003");
-		evento.setDescricao("O Commicon é um evento anual que reúne entusiastas da cultura pop, quadrinhos, filmes, jogos e ficção científica.");
-		evento.setOrganicacao("Commicon Grup");
+		evento.setDescricao("O Comic con é um evento anual que reúne entusiastas da cultura pop, quadrinhos, filmes, jogos e ficção científica.");
+		evento.setOrganicacao("Comic con Grup");
 		evento.setCapacidade(10000);
-		evento.setParticipantes(new ArrayList<>());
 
 		Atividade atividade = new Atividade();
 		atividade.setId(1);
